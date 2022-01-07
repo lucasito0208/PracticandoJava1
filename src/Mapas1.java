@@ -16,11 +16,14 @@ public class Mapas1 {
         empIds.put("Gonzalo", 200);
         empIds.put("Lucia", 300);
 
+        //Imprime mis valores con sus respectivas claves
         System.out.println(empIds);
-
+        //Le paso un valor, y me devuelve su clave
         System.out.println(empIds.get("Lucas"));
+        //Compruebo valor
+        System.out.println(empIds.containsKey("jorge"));
 
-        System.out.println();
+
 
     }
 }
