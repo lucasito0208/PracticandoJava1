@@ -5,6 +5,8 @@ public class BusquedaBinaria1 {
 
     public static void main(String[] args){
 
+
+
     }
 
     public int busquedaBin(int[] lista, int clave){
@@ -13,7 +15,7 @@ public class BusquedaBinaria1 {
         izquierda = 0;
 
         while(izquierda <= derecha && clave != lista[index]){
-            //posiciono el puntero en el medio del array
+            //Posiciono el puntero en el medio del array
             index = (izquierda - derecha)/2;
             //Nueva derecha y nueva izquierda
             if(clave > lista[index]){

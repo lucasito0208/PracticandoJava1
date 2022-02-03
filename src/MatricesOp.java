@@ -33,7 +33,7 @@ public class MatricesOp {
                 case 2:
 
                     if(rellenado){
-                        System.out.println(matriz);
+                        mostrarMatriz(matriz);
 
                     }else{
                         System.out.println("Debes rellenar la matriz primero...");
@@ -43,7 +43,7 @@ public class MatricesOp {
                 case 3:
 
                     if(rellenado){
-                        //No me volverá a pedir fila a menos que fila se encuentre entre 0 y la longitud de la matriz.
+                        //Mientras la fila NO sea mayor que 0 y menor que la longitud de la matriz, preguntamelo de nuevo.
                         do{
                             System.out.println("Elige una fila: ");
                             fila = sc.nextInt();
@@ -59,8 +59,6 @@ public class MatricesOp {
                 case 4:
 
                     if(rellenado){
-                        System.out.println("Elige una columna: ");
-                        columna = sc.nextInt();
 
                         do{
                             System.out.println("Elige una columna: ");
@@ -111,6 +109,15 @@ public class MatricesOp {
         System.out.println("FIN");
     }
 
+    public static void mostrarMatriz(int[][] matriz){
+        for(int i = 0; i < matriz.length; i++){
+            for(int j = 0; j < matriz[i].length; j++){
+                System.out.print(matriz[i][j] + " ");
+            }
+            System.out.println(" ");
+        }
+    }
+
     public static void rellenarMatriz(Scanner sc, int[][] matriz){
         for(int i = 0; i < matriz.length; i++){
             for(int j = 0; j < matriz.length; j++){
@@ -127,7 +134,7 @@ public class MatricesOp {
             //solo varían las columnas, la fila es la que nosotros queramos sumar
             suma = suma + matriz[fila][j];
         }
-
+        //Devuelvo suma que es la variable en la estoy depositando la suma de los elementos de la fila.
         return suma;
     }
 
@@ -136,7 +143,6 @@ public class MatricesOp {
         for(int i = 0; i < matriz.length; i++){
             suma = suma + matriz[i][columna];
         }
-
         return suma;
     }
 
@@ -168,6 +174,12 @@ public class MatricesOp {
         for(int i = 0, j = matriz.length; i < matriz.length; i++, j--){
             suma = suma + matriz[i][j];
         }
+
+        /*for(int i = 0; i < matriz.length; i++){
+            for(int j = matriz[i].length; j >= 0; j--){
+                suma = suma + matriz[i][j];
+            }
+        }*/
 
         return suma;
     }
